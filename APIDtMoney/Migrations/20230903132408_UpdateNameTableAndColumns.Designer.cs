@@ -4,6 +4,7 @@ using APIDtMoney.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APIDtMoney.Migrations
 {
     [DbContext(typeof(ApiDtMoneyContext))]
-    partial class ApiDtMoneyContextModelSnapshot : ModelSnapshot
+    [Migration("20230903132408_UpdateNameTableAndColumns")]
+    partial class UpdateNameTableAndColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,7 +56,7 @@ namespace APIDtMoney.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Transactions");
+                    b.ToTable("Bills");
                 });
 #pragma warning restore 612, 618
         }

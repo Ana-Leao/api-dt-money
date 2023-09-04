@@ -3,11 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APIDtMoney.Models;
 
-[Table("Bills")]
-public class Bill
+[Table("Transactions")]
+public class Transaction
 {
     [Key]
-    public int BillId { get; set; }
+    public int Id { get; set; }
 
     [Required]
     [StringLength(80)]
@@ -19,11 +19,11 @@ public class Bill
 
     [Required]
     [Column(TypeName = "decimal(10,2)")]
-    public decimal Value { get; set; }
+    public decimal Price { get; set; }
 
     [Required]
     [StringLength(80)]
     public string? Category { get; set; }
 
-    public DateTime Date { get; set; }
+    public DateTime CreatedAt { get; set; }
 }
